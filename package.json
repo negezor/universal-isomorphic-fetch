@@ -1,0 +1,48 @@
+{
+	"name": "universal-isomorphic-fetch",
+	"version": "0.0.1",
+	"description": "The modern replacement isomorphic-fetch",
+	"browser": "lib/browser.js",
+	"main": "lib/index.js",
+	"scripts": {
+		"rollup:build": "cross-env NODE_ENV=production rollup -c",
+		"rollup:watch": "npm run rollup:build -- -w",
+		"lint": "eslint ./src --ext .mjs,.js --ignore-path .gitignore .",
+		"lint:fix": "npm run lint -- --fix",
+		"test": "cross-env BABEL_ENV=test jest --config jest.config.json --no-cache",
+		"build": "npm run rollup:build",
+		"prepare": "npm run build && npm run test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/negezor/universal-isomorphic-fetch.git"
+	},
+	"keywords": [],
+	"author": "Negezor <negezor@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/negezor/universal-isomorphic-fetch/issues"
+	},
+	"homepage": "https://github.com/negezor/universal-isomorphic-fetch#readme",
+	"devDependencies": {
+		"@babel/core": "^7.0.0-beta.49",
+		"@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.49",
+		"@babel/preset-env": "^7.0.0-beta.49",
+		"babel-core": "^7.0.0-0",
+		"babel-jest": "^23.0.1",
+		"cross-env": "^5.1.6",
+		"eslint": "^4.19.1",
+		"eslint-config-airbnb-base": "^12.1.0",
+		"eslint-plugin-import": "^2.12.0",
+		"jest": "^23.1.0",
+		"node-fetch": "^2.1.2",
+		"rollup": "^0.59.4",
+		"rollup-plugin-commonjs": "^9.1.3",
+		"rollup-plugin-node-resolve": "^3.3.0",
+		"whatwg-fetch": "^2.0.4"
+	},
+	"peerDependencies": {
+		"node-fetch": "^2.1.2",
+		"whatwg-fetch": "^2.0.4"
+	}
+}
